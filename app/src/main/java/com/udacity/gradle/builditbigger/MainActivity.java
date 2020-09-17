@@ -23,7 +23,8 @@ import java.io.IOException;
 
 
 public class MainActivity extends AppCompatActivity {
-    String joke;
+    public static String JOKE_KEY = "Joke key";
+    private String joke;
 
 
     @Override
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //new JokesEndpointAsyncTask().execute(new Pair<Context, String>(this, "Jharna"));
-        new JokesEndpointAsyncTask().execute();
+        //new JokesEndpointAsyncTask().execute();
     }
 
 
@@ -76,7 +77,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateUI(String result) {
         joke = result;
-        Toast.makeText(this, result, Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, result, Toast.LENGTH_LONG).show();
+
+        Intent intent = new Intent(MainActivity.this, JAndroidJokeDisplayActivity.class);
+        intent.putExtra(JOKE_KEY, joke);
+        startActivity(intent);
 
     }
 
