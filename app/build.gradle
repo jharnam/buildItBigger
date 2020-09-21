@@ -45,9 +45,11 @@ android {
     flavorDimensions "version"
     productFlavors {
         free {
+            dimension "version"
             applicationIdSuffix ".itsfree"
         }
         paid {
+            dimension "version"
             applicationIdSuffix ".itspaid"
         }
     }
@@ -63,6 +65,17 @@ android {
         paid {
             res {
                 srcDirs 'src/paid/res', 'src/paid/res/'
+            }
+            java {
+                srcDirs 'src/paid/java', 'src/paid/java'
+            }
+        }
+        free {
+            res {
+                srcDirs 'src/free/res', 'src/free/res/'
+            }
+            java {
+                srcDirs 'src/free/java', 'src/free/java'
             }
         }
     }
