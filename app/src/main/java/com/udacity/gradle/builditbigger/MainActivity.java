@@ -110,18 +110,6 @@ public class MainActivity extends AppCompatActivity {
                 myApiService = builder.build();
             }
 
-        /*
-
-        if (params.length < 1 || params[0] == null) {
-            Log.i("Jharna", "here");
-            return null;
-        }
-
-        context = params[0].first;
-        String name = params[0].second;
-
-         */
-
             try {
                 //return myApiService.sayHi(name).execute().getData();
                 return myApiService.getJoke().execute().getData();
