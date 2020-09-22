@@ -72,12 +72,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void displayJokeViaGCEAndJavaLib(View view) {
         new JokesEndpointAsyncTask().execute();
-        //new JokesEndpointAsyncTask().execute(new Pair<Context, String>(this, "Jharna"));
     }
 
     private void updateUI(String result) {
         joke = result;
-        //Toast.makeText(this, result, Toast.LENGTH_LONG).show();
 
         Intent intent = new Intent(MainActivity.this, JAndroidJokeDisplayActivity.class);
         intent.putExtra(JOKE_KEY, joke);
@@ -132,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
                 return ;
             }
             //Toast.makeText(context, result, Toast.LENGTH_LONG).show();
-            //TODO update the UI
+            //update the UI
             updateUI(result);
 
         }
